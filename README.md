@@ -7,3 +7,8 @@
 1. 如果入口 chunk 之间包含一些重复的模块，那些重复模块都会被引入到各个 bundle 中。
 2. 这种方法不够灵活，并且不能动态地将核心应用程序逻辑中的代码拆分出来。
 
+#### 动态引入
+使用 ES 提案的 `import()` 语法
+
+#### bundle 分析
+[Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
