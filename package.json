@@ -7,9 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "start": "webpack serve --open",
+    "start": "webpack serve --open --config webpack.dev.js",
     "server": "node server.js",
-    "build": "webpack"
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,8 @@
     "webpack": "^5.28.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-middleware": "^4.1.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "lodash": "^4.17.21"
