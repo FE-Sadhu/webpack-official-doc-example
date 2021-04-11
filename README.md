@@ -12,3 +12,16 @@
 
 #### bundle 分析
 [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+
+#### 补充说明
+代码分割一般就两种情况：
+
+###### 分割自己写的模块
+有 a.js b.js common.js 三个文件，若 a、b 都引入了 common.js 的方法。
+
+若仅配置 splitChunksPlugin 去让 webpack 自动分割的话，分割不出来。
+
+这种情况必须使用 ***动态导入*** 才能分割出来。
+
+###### 分割第三方模块
+如引入 lodash，这种情况直接配置 splitChunksPlugin 去让 webpack 自动分割就行。
