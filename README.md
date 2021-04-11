@@ -24,4 +24,15 @@
 这种情况必须使用 ***动态导入*** 才能分割出来。
 
 ###### 分割第三方模块
-如引入 lodash，这种情况直接配置 splitChunksPlugin 去让 webpack 自动分割就行。
+如引入 lodash，这种情况直接配置 splitChunksPlugin ```splitChunks: {chunks: 'all'}``` 去让 webpack 自动分割就行。
+
+也可以使用 `caching` 那章，配置 splitChunksPlugin 的参数，分割所有第三方模块为一个 chunk。
+```js
+cacheGroups: { // 这里的配置是将代码中使用到的第三方库提取到单独的 vendor chunk 文件中，因为这些第三方库的代码不容易变化，当再次构建时，大概率不会变，则可以命中 client 强缓存机制
+  vendor: {
+    test: /[\\/]node_modules[\\/]/,
+    name: 'vendors',
+    chunks: 'all',
+  },
+},
+```
